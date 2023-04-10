@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		F822EDE429E409E000E21041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EDE329E409E000E21041 /* AppDelegate.swift */; };
 		F822EDE629E409E000E21041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EDE529E409E000E21041 /* SceneDelegate.swift */; };
-		F822EDE829E409E000E21041 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EDE729E409E000E21041 /* ViewController.swift */; };
+		F822EDE829E409E000E21041 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EDE729E409E000E21041 /* MainViewController.swift */; };
 		F822EDEB29E409E000E21041 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F822EDE929E409E000E21041 /* Main.storyboard */; };
 		F822EDED29E409E200E21041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F822EDEC29E409E200E21041 /* Assets.xcassets */; };
 		F822EDF029E409E200E21041 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F822EDEE29E409E200E21041 /* LaunchScreen.storyboard */; };
 		F822EDFB29E409E200E21041 /* PizzaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EDFA29E409E200E21041 /* PizzaAppTests.swift */; };
 		F822EE0529E409E200E21041 /* PizzaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE0429E409E200E21041 /* PizzaAppUITests.swift */; };
 		F822EE0729E409E200E21041 /* PizzaAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE0629E409E200E21041 /* PizzaAppUITestsLaunchTests.swift */; };
+		F822EE1629E41DE200E21041 /* PizzaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F822EE1529E41DE200E21041 /* PizzaCell.xib */; };
+		F822EE1A29E4280D00E21041 /* PizzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE1929E4280D00E21041 /* PizzaCell.swift */; };
+		F822EE1E29E42A8A00E21041 /* DrawerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE1D29E42A8A00E21041 /* DrawerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 		F822EDE029E409E000E21041 /* PizzaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F822EDE329E409E000E21041 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F822EDE529E409E000E21041 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F822EDE729E409E000E21041 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F822EDE729E409E000E21041 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F822EDEA29E409E000E21041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F822EDEC29E409E200E21041 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F822EDEF29E409E200E21041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		F822EE0029E409E200E21041 /* PizzaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PizzaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F822EE0429E409E200E21041 /* PizzaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaAppUITests.swift; sourceTree = "<group>"; };
 		F822EE0629E409E200E21041 /* PizzaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F822EE1529E41DE200E21041 /* PizzaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PizzaCell.xib; sourceTree = "<group>"; };
+		F822EE1929E4280D00E21041 /* PizzaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaCell.swift; sourceTree = "<group>"; };
+		F822EE1D29E42A8A00E21041 /* DrawerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,10 @@
 		F822EDE229E409E000E21041 /* PizzaApp */ = {
 			isa = PBXGroup;
 			children = (
+				F822EE1B29E42A7800E21041 /* Utils */,
+				F822EE1329E41D7000E21041 /* MainView */,
 				F822EDE329E409E000E21041 /* AppDelegate.swift */,
 				F822EDE529E409E000E21041 /* SceneDelegate.swift */,
-				F822EDE729E409E000E21041 /* ViewController.swift */,
 				F822EDE929E409E000E21041 /* Main.storyboard */,
 				F822EDEC29E409E200E21041 /* Assets.xcassets */,
 				F822EDEE29E409E200E21041 /* LaunchScreen.storyboard */,
@@ -125,6 +132,40 @@
 				F822EE0629E409E200E21041 /* PizzaAppUITestsLaunchTests.swift */,
 			);
 			path = PizzaAppUITests;
+			sourceTree = "<group>";
+		};
+		F822EE1329E41D7000E21041 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE1429E41DC000E21041 /* Cell */,
+				F822EDE729E409E000E21041 /* MainViewController.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		F822EE1429E41DC000E21041 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE1529E41DE200E21041 /* PizzaCell.xib */,
+				F822EE1929E4280D00E21041 /* PizzaCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F822EE1B29E42A7800E21041 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE1C29E42A7F00E21041 /* Protocols */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F822EE1C29E42A7F00E21041 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE1D29E42A8A00E21041 /* DrawerProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F822EE1629E41DE200E21041 /* PizzaCell.xib in Resources */,
 				F822EDF029E409E200E21041 /* LaunchScreen.storyboard in Resources */,
 				F822EDED29E409E200E21041 /* Assets.xcassets in Resources */,
 				F822EDEB29E409E000E21041 /* Main.storyboard in Resources */,
@@ -258,9 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F822EDE829E409E000E21041 /* ViewController.swift in Sources */,
+				F822EE1A29E4280D00E21041 /* PizzaCell.swift in Sources */,
+				F822EDE829E409E000E21041 /* MainViewController.swift in Sources */,
 				F822EDE429E409E000E21041 /* AppDelegate.swift in Sources */,
 				F822EDE629E409E000E21041 /* SceneDelegate.swift in Sources */,
+				F822EE1E29E42A8A00E21041 /* DrawerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
