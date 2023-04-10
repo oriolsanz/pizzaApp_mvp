@@ -19,6 +19,8 @@
 		F822EE1629E41DE200E21041 /* PizzaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F822EE1529E41DE200E21041 /* PizzaCell.xib */; };
 		F822EE1A29E4280D00E21041 /* PizzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE1929E4280D00E21041 /* PizzaCell.swift */; };
 		F822EE1E29E42A8A00E21041 /* DrawerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE1D29E42A8A00E21041 /* DrawerProtocol.swift */; };
+		F822EE2029E4575500E21041 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE1F29E4575500E21041 /* MainPresenter.swift */; };
+		F822EE2329E48E7900E21041 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE2229E48E7900E21041 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		F822EE1529E41DE200E21041 /* PizzaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PizzaCell.xib; sourceTree = "<group>"; };
 		F822EE1929E4280D00E21041 /* PizzaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaCell.swift; sourceTree = "<group>"; };
 		F822EE1D29E42A8A00E21041 /* DrawerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerProtocol.swift; sourceTree = "<group>"; };
+		F822EE1F29E4575500E21041 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		F822EE2229E48E7900E21041 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		F822EDE229E409E000E21041 /* PizzaApp */ = {
 			isa = PBXGroup;
 			children = (
+				F822EE2129E48E6600E21041 /* DetailView */,
 				F822EE1B29E42A7800E21041 /* Utils */,
 				F822EE1329E41D7000E21041 /* MainView */,
 				F822EDE329E409E000E21041 /* AppDelegate.swift */,
@@ -139,6 +144,7 @@
 			children = (
 				F822EE1429E41DC000E21041 /* Cell */,
 				F822EDE729E409E000E21041 /* MainViewController.swift */,
+				F822EE1F29E4575500E21041 /* MainPresenter.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -166,6 +172,14 @@
 				F822EE1D29E42A8A00E21041 /* DrawerProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F822EE2129E48E6600E21041 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE2229E48E7900E21041 /* DetailViewController.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,9 +316,11 @@
 			files = (
 				F822EE1A29E4280D00E21041 /* PizzaCell.swift in Sources */,
 				F822EDE829E409E000E21041 /* MainViewController.swift in Sources */,
+				F822EE2029E4575500E21041 /* MainPresenter.swift in Sources */,
 				F822EDE429E409E000E21041 /* AppDelegate.swift in Sources */,
 				F822EDE629E409E000E21041 /* SceneDelegate.swift in Sources */,
 				F822EE1E29E42A8A00E21041 /* DrawerProtocol.swift in Sources */,
+				F822EE2329E48E7900E21041 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

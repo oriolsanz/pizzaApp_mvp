@@ -7,11 +7,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController{
+class MainViewController: UIViewController {
     
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableview: UITableView!
+    
+    private let presenter = MainPresenter()
     
     var pizzaArray: [PizzaCellModel] = []
     
@@ -63,10 +65,28 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let drawer = item.cellDrawer
         let cell = drawer.tableView(tableView, cellForRowAt: indexPath)
         drawer.drawCell(cell, withItem: item)
+        (cell as? PizzaCell)?.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
+    }
+}
+
+extension MainViewController: PizzaCellDelegate {
+    
+    func didTapButton(_ cell: PizzaCell) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+            return
+        }
+        vc.pizzaName = cell.pizzaName.text
+        vc.pizzaImage = cell.pizzaImage
+        
+        vc.modalPresentationStyle = .fullScreen
+        
+        present(vc, animated: true)
     }
 }

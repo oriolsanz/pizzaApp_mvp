@@ -11,6 +11,17 @@ class PizzaCell: UITableViewCell {
     @IBOutlet weak var pizzaImage: UIImageView!
     @IBOutlet weak var pizzaName: UILabel!
     @IBOutlet weak var customizeButton: UIButton!
+    
+    weak var delegate: PizzaCellDelegate?
+    
+    @IBAction func didTapButton(_ sender: UIButton) {
+        
+        delegate?.didTapButton(self)
+    }
+}
+
+protocol PizzaCellDelegate: AnyObject {
+    func didTapButton(_ cell: PizzaCell)
 }
 
 struct PizzaCellModel {
@@ -35,6 +46,8 @@ class PizzaCellDrawer: DrawerProtocol {
         
         cell.pizzaImage.image = UIImage(named: item.pizzaImage)
         cell.pizzaName.text = item.pizzaName
+        
+        cell.selectionStyle = .none
     }
 }
 

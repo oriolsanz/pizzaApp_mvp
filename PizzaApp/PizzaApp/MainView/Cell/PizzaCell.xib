@@ -23,15 +23,18 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZN-Ob-w42">
-                        <rect key="frame" x="30" y="166" width="333" height="21"/>
+                        <rect key="frame" x="26" y="166" width="341" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xL-Pa-PRy">
-                        <rect key="frame" x="40" y="202" width="105" height="35"/>
+                        <rect key="frame" x="36" y="202" width="105" height="35"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="filled" title="Customize"/>
+                        <connections>
+                            <action selector="didTapButton:" destination="WEf-Lm-b3K" eventType="touchUpInside" id="Kzq-Qu-iyB"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
