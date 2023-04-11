@@ -19,4 +19,13 @@ class MainPresenter: MainViewPresenter {
     func getData() -> (pizzas: [PizzaModel], ingredients: [IngredientModel]) {
         return Utils().getJsonData()
     }
+    
+    func getPizza(fromList list: [PizzaModel], withName name: String) -> PizzaModel? {
+        for pizza in list {
+            if pizza.pizzaName == name {
+                return pizza
+            }
+        }
+        return nil
+    }
 }

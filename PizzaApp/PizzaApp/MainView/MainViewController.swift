@@ -71,8 +71,8 @@ extension MainViewController: PizzaCellDelegate {
         guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
             return
         }
-        vc.pizzaName = cell.pizzaName.text
-        vc.pizzaImage = cell.pizzaImage
+        vc.pizza = presenter.getPizza(fromList: pizzaArray, withName: cell.pizzaName.text ?? "")
+        vc.ingredientsList = presenter.getData().ingredients
         
         vc.modalPresentationStyle = .fullScreen
         

@@ -19,9 +19,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var plusLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
     
-    
-    var pizzaImage: UIImageView?
-    var pizzaName: String?
+    var pizza: PizzaModel?
+    var ingredientsList: [IngredientModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +31,8 @@ class DetailViewController: UIViewController {
     func configView() {
         
         backButton.titleLabel?.text = "< Back"
-        pizzaNameLabel.text = pizzaName
-        pizzaImageView.image = pizzaImage?.image
+        pizzaNameLabel.text = pizza?.pizzaName
+        pizzaImageView.image = UIImage(named: pizza?.pizzaImage ?? "")
         ingredients.text = "Ingredientes:"
         addToCartButton.titleLabel?.text = "Add $100"
     }
