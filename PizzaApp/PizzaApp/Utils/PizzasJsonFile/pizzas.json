@@ -1,0 +1,186 @@
+{
+    "pizzas": [{
+            "name": "Prosciutto",
+            "image": "PMPR",
+            "ingredients": [1, 2, 3],
+            "price": 11.40
+        },
+        {
+            "name": "Barbacoa",
+            "image": "PMBQM",
+            "ingredients": [1, 2, 4, 5, 6, 7, 8],
+            "price": 12.90
+        },
+        {
+            "name": "4 Quesos",
+            "image": "PM4Q",
+            "ingredients": [1, 2, 9, 10, 11],
+            "price": 12.90
+        },
+        {
+            "name": "Di Capra",
+            "image": "DICAPRAAAAA",
+            "ingredients": [2, 9, 9, 12],
+            "price": 12.90
+        },
+        {
+            "name": "Funghi",
+            "image": "PMFU",
+            "ingredients": [1, 2, 3, 13],
+            "price": 11.90
+        },
+        {
+            "name": "4 Estaciones",
+            "image": "PM4E",
+            "ingredients": [1, 2, 3, 6, 13, 14],
+            "price": 12.90
+        },
+        {
+            "name": "Pepperoni",
+            "image": "PMPE",
+            "ingredients": [1, 2, 15],
+            "price": 11.40
+        },
+        {
+            "name": "Carbonara",
+            "image": "PMCA",
+            "ingredients": [2, 4, 6, 13, 16],
+            "price": 12.90
+        },
+        {
+            "name": "Mediterránea",
+            "image": "PMME",
+            "ingredients": [1, 2, 17, 18],
+            "price": 12.90
+        },
+        {
+            "name": "Margarita",
+            "image": "PMMA",
+            "ingredients": [1, 2],
+            "price": 9.90
+        },
+        {
+            "name": "Vegetariana",
+            "image": "PMVE",
+            "ingredients": [1, 2, 13, 18, 19, 20, 21],
+            "price": 12.90
+        },
+        {
+            "name": "Hawaiana",
+            "image": "PMHO",
+            "ingredients": [1, 2, 3, 22],
+            "price": 11.90
+        }
+    ],
+    "ingredients": [{
+            "id": 1,
+            "name": "Tomate",
+            "price": 1.90
+        },
+        {
+            "id": 2,
+            "name": "Mozzarella",
+            "price": 1.90
+        },
+        {
+            "id": 3,
+            "name": "Jamón York",
+            "price": 1.90
+        },
+        {
+            "id": 4,
+            "name": "Bacon",
+            "price": 2.50
+        },
+        {
+            "id": 5,
+            "name": "Pollo",
+            "price": 2.50
+        },
+        {
+            "id": 6,
+            "name": "Cebolla",
+            "price": 1.50
+        },
+        {
+            "id": 7,
+            "name": "Ternera",
+            "price": 2.50
+        },
+        {
+            "id": 8,
+            "name": "Salsa barbacoa",
+            "price": 1.90
+        },
+        {
+            "id": 9,
+            "name": "Queso de cabra",
+            "price": 2.50
+        },
+        {
+            "id": 10,
+            "name": "Gorgonzola",
+            "price": 2.50
+        },
+        {
+            "id": 11,
+            "name": "Emmental",
+            "price": 2.50
+        },
+        {
+            "id": 12,
+            "name": "Cebolla caramelizada",
+            "price": 2.50
+        },
+        {
+            "id": 13,
+            "name": "Champiñones",
+            "price": 1.90
+        },
+        {
+            "id": 14,
+            "name": "Olivas negras",
+            "price": 1.90
+        },
+        {
+            "id": 15,
+            "name": "Pepperoni",
+            "price": 1.90
+        },
+        {
+            "id": 16,
+            "name": "Salsa Carbonara",
+            "price": 1.90
+        },
+        {
+            "id": 17,
+            "name": "Atún",
+            "price": 2.50
+        },
+        {
+            "id": 18,
+            "name": "Cebolla morada",
+            "price": 1.90
+        },
+        {
+            "id": 19,
+            "name": "Calabacín",
+            "price": 1.90
+        },
+        {
+            "id": 20,
+            "name": "Tomate fresco",
+            "price": 3.00
+        },
+        {
+            "id": 21,
+            "name": "Parmesano",
+            "price": 1.90
+        },
+        {
+            "id": 22,
+            "name": "Piña",
+            "price": 1.90
+        }
+    ]
+}

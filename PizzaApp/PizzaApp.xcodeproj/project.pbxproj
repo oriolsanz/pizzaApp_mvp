@@ -21,6 +21,11 @@
 		F822EE1E29E42A8A00E21041 /* DrawerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE1D29E42A8A00E21041 /* DrawerProtocol.swift */; };
 		F822EE2029E4575500E21041 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE1F29E4575500E21041 /* MainPresenter.swift */; };
 		F822EE2329E48E7900E21041 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE2229E48E7900E21041 /* DetailViewController.swift */; };
+		F822EE2629E4C5B500E21041 /* pizzas.json in Resources */ = {isa = PBXBuildFile; fileRef = F822EE2529E4C5B500E21041 /* pizzas.json */; };
+		F822EE2929E5E19D00E21041 /* PizzaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE2829E5E19D00E21041 /* PizzaModel.swift */; };
+		F822EE2B29E5E1C200E21041 /* IngredientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE2A29E5E1C200E21041 /* IngredientModel.swift */; };
+		F822EE2D29E5E75A00E21041 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE2C29E5E75A00E21041 /* Utils.swift */; };
+		F822EE3029E60A7900E21041 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE2F29E60A7900E21041 /* RootModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		F822EE1D29E42A8A00E21041 /* DrawerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerProtocol.swift; sourceTree = "<group>"; };
 		F822EE1F29E4575500E21041 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		F822EE2229E48E7900E21041 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F822EE2529E4C5B500E21041 /* pizzas.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pizzas.json; sourceTree = "<group>"; };
+		F822EE2829E5E19D00E21041 /* PizzaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaModel.swift; sourceTree = "<group>"; };
+		F822EE2A29E5E1C200E21041 /* IngredientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientModel.swift; sourceTree = "<group>"; };
+		F822EE2C29E5E75A00E21041 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F822EE2F29E60A7900E21041 /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +119,7 @@
 		F822EDE229E409E000E21041 /* PizzaApp */ = {
 			isa = PBXGroup;
 			children = (
+				F822EE2729E5E15A00E21041 /* Models */,
 				F822EE2129E48E6600E21041 /* DetailView */,
 				F822EE1B29E42A7800E21041 /* Utils */,
 				F822EE1329E41D7000E21041 /* MainView */,
@@ -161,7 +172,9 @@
 		F822EE1B29E42A7800E21041 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F822EE2429E4C59100E21041 /* PizzasJsonFile */,
 				F822EE1C29E42A7F00E21041 /* Protocols */,
+				F822EE2C29E5E75A00E21041 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -180,6 +193,24 @@
 				F822EE2229E48E7900E21041 /* DetailViewController.swift */,
 			);
 			path = DetailView;
+			sourceTree = "<group>";
+		};
+		F822EE2429E4C59100E21041 /* PizzasJsonFile */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE2529E4C5B500E21041 /* pizzas.json */,
+			);
+			path = PizzasJsonFile;
+			sourceTree = "<group>";
+		};
+		F822EE2729E5E15A00E21041 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE2829E5E19D00E21041 /* PizzaModel.swift */,
+				F822EE2A29E5E1C200E21041 /* IngredientModel.swift */,
+				F822EE2F29E60A7900E21041 /* RootModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F822EE1629E41DE200E21041 /* PizzaCell.xib in Resources */,
+				F822EE2629E4C5B500E21041 /* pizzas.json in Resources */,
 				F822EDF029E409E200E21041 /* LaunchScreen.storyboard in Resources */,
 				F822EDED29E409E200E21041 /* Assets.xcassets in Resources */,
 				F822EDEB29E409E000E21041 /* Main.storyboard in Resources */,
@@ -316,8 +348,12 @@
 			files = (
 				F822EE1A29E4280D00E21041 /* PizzaCell.swift in Sources */,
 				F822EDE829E409E000E21041 /* MainViewController.swift in Sources */,
+				F822EE2929E5E19D00E21041 /* PizzaModel.swift in Sources */,
 				F822EE2029E4575500E21041 /* MainPresenter.swift in Sources */,
 				F822EDE429E409E000E21041 /* AppDelegate.swift in Sources */,
+				F822EE3029E60A7900E21041 /* RootModel.swift in Sources */,
+				F822EE2D29E5E75A00E21041 /* Utils.swift in Sources */,
+				F822EE2B29E5E1C200E21041 /* IngredientModel.swift in Sources */,
 				F822EDE629E409E000E21041 /* SceneDelegate.swift in Sources */,
 				F822EE1E29E42A8A00E21041 /* DrawerProtocol.swift in Sources */,
 				F822EE2329E48E7900E21041 /* DetailViewController.swift in Sources */,
