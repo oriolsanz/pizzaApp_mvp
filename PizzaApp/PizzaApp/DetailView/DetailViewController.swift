@@ -12,6 +12,13 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var pizzaNameLabel: UILabel!
     @IBOutlet weak var pizzaImageView: UIImageView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var ingredients: UILabel!
+    @IBOutlet weak var ingredientsTableView: UITableView!
+    @IBOutlet weak var minusLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var plusLabel: UILabel!
+    @IBOutlet weak var addToCartButton: UIButton!
+    
     
     var pizzaImage: UIImageView?
     var pizzaName: String?
@@ -19,9 +26,16 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backButton.titleLabel?.text = "<"
+        configView()
+    }
+    
+    func configView() {
+        
+        backButton.titleLabel?.text = "< Back"
         pizzaNameLabel.text = pizzaName
         pizzaImageView.image = pizzaImage?.image
+        ingredients.text = "Ingredientes:"
+        addToCartButton.titleLabel?.text = "Add $100"
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {

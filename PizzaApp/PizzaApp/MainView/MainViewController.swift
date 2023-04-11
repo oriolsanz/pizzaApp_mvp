@@ -15,12 +15,12 @@ class MainViewController: UIViewController {
     
     private let presenter = MainPresenter()
     
-    var pizzaArray: [PizzaCellModel] = []
+    var pizzaArray: [PizzaModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getPizzas()
+        getData()
         configTableView()
         configStrings()
     }
@@ -38,20 +38,9 @@ class MainViewController: UIViewController {
         tableview.register(UINib(nibName: "PizzaCell", bundle: nil), forCellReuseIdentifier: "PizzaCell")
     }
     
-    func getPizzas() {
+    func getData() {
         
-        pizzaArray.append(PizzaCellModel(pizzaImage: "DICAPRAAAAA", pizzaName: "Di Capra"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PM4E", pizzaName: "4 Estaciones"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PM4Q", pizzaName: "4 Quesos"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PMBQM", pizzaName: "Barbacoa"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PMCA", pizzaName: "Carbonara"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PMFU", pizzaName: "Funghi"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PMHO", pizzaName: "Hawaiana"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PMMA", pizzaName: "Margarita"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PMME", pizzaName: "Mediterránea"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PMPE", pizzaName: "Pepperoni"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PMPR", pizzaName: "Prosciutto"))
-        pizzaArray.append(PizzaCellModel(pizzaImage: "PMVE", pizzaName: "Vegetariana"))
+        pizzaArray = presenter.getData().pizzas
     }
 }
 

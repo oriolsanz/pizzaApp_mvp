@@ -24,11 +24,6 @@ protocol PizzaCellDelegate: AnyObject {
     func didTapButton(_ cell: PizzaCell)
 }
 
-struct PizzaCellModel {
-    var pizzaImage: String
-    var pizzaName: String
-}
-
 class PizzaCellDrawer: DrawerProtocol {
     struct Constants {
         static let reuseID = "PizzaCell"
@@ -40,7 +35,7 @@ class PizzaCellDrawer: DrawerProtocol {
 
     func drawCell(_ cell: UITableViewCell, withItem item: Any) {
         guard let cell = cell as? PizzaCell,
-              let item = item as? PizzaCellModel else {
+              let item = item as? PizzaModel else {
             return
         }
         
@@ -49,11 +44,4 @@ class PizzaCellDrawer: DrawerProtocol {
         
         cell.selectionStyle = .none
     }
-}
-
-extension PizzaCellModel: DrawerItemProtocol {
-    var cellDrawer: DrawerProtocol {
-        return PizzaCellDrawer()
-    }
-
 }
