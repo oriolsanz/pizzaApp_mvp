@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zvX-r6-UPF" customClass="IngredientCell" customModule="PizzaApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zvX-r6-UPF" id="niY-ws-GSY">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9b-wp-yXh">
+                        <rect key="frame" x="10" y="22" width="42" height="0.0"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="42j-uw-FaZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALH-NO-4jl">
+                        <rect key="frame" x="62.000000000000014" y="11.666666666666664" width="187.33333333333337" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71V-hy-f9O">
+                        <rect key="frame" x="259.33333333333331" y="11.666666666666664" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSg-Il-sxX">
+                        <rect key="frame" x="311.33333333333331" y="7" width="30" height="30"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="+"/>
+                        <connections>
+                            <action selector="addButtonTapped:" destination="zvX-r6-UPF" eventType="touchUpInside" id="UfU-NF-zSF"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6v5-Xa-AvA">
+                        <rect key="frame" x="351.33333333333331" y="4.6666666666666679" width="31.666666666666686" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="-"/>
+                        <connections>
+                            <action selector="substractButtonTapped:" destination="zvX-r6-UPF" eventType="touchUpInside" id="Frx-KF-3eh"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6v5-Xa-AvA" firstAttribute="leading" secondItem="hSg-Il-sxX" secondAttribute="trailing" constant="10" id="4lJ-j6-clq"/>
+                    <constraint firstItem="H9b-wp-yXh" firstAttribute="centerY" secondItem="niY-ws-GSY" secondAttribute="centerY" id="CEO-KA-c9r"/>
+                    <constraint firstItem="71V-hy-f9O" firstAttribute="leading" secondItem="ALH-NO-4jl" secondAttribute="trailing" constant="10" id="Dhv-ao-2Mh"/>
+                    <constraint firstItem="ALH-NO-4jl" firstAttribute="centerY" secondItem="niY-ws-GSY" secondAttribute="centerY" id="Lcu-TX-vFH"/>
+                    <constraint firstItem="ALH-NO-4jl" firstAttribute="leading" secondItem="H9b-wp-yXh" secondAttribute="trailing" constant="10" id="Ltm-wp-Twr"/>
+                    <constraint firstAttribute="trailing" secondItem="6v5-Xa-AvA" secondAttribute="trailing" constant="10" id="RgO-CN-uqm"/>
+                    <constraint firstItem="H9b-wp-yXh" firstAttribute="leading" secondItem="niY-ws-GSY" secondAttribute="leading" constant="10" id="bOM-U8-zcT"/>
+                    <constraint firstItem="71V-hy-f9O" firstAttribute="centerY" secondItem="niY-ws-GSY" secondAttribute="centerY" id="ccY-J5-npG"/>
+                    <constraint firstItem="hSg-Il-sxX" firstAttribute="centerY" secondItem="niY-ws-GSY" secondAttribute="centerY" id="inb-hi-Xq8"/>
+                    <constraint firstItem="hSg-Il-sxX" firstAttribute="leading" secondItem="71V-hy-f9O" secondAttribute="trailing" constant="10" id="lSe-7L-9BE"/>
+                    <constraint firstItem="6v5-Xa-AvA" firstAttribute="centerY" secondItem="niY-ws-GSY" secondAttribute="centerY" id="lYo-OO-4Z6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addButton" destination="hSg-Il-sxX" id="RBn-zO-okE"/>
+                <outlet property="ingredientName" destination="ALH-NO-4jl" id="d2y-6U-Wow"/>
+                <outlet property="ingredientPrice" destination="71V-hy-f9O" id="68A-ml-bdn"/>
+                <outlet property="ingredientQuantity" destination="H9b-wp-yXh" id="VX3-kW-A6Z"/>
+                <outlet property="substractButton" destination="6v5-Xa-AvA" id="PBT-lX-4kl"/>
+            </connections>
+            <point key="canvasLocation" x="192" y="19"/>
+        </tableViewCell>
+    </objects>
+</document>

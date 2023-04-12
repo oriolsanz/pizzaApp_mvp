@@ -6,15 +6,14 @@
 //
 
 import Foundation
-import UIKit
 
 // here we set the methods from the viewController that are needed to update the view
-protocol MainViewPresenter: AnyObject {
+protocol MainViewDelegate: NSObjectProtocol {
     
 }
 
 // here we set the logic methods that the viewController needs
-class MainPresenter: MainViewPresenter {
+class MainPresenter {
     
     func getData() -> (pizzas: [PizzaModel], ingredients: [IngredientModel]) {
         return Utils().getJsonData()
