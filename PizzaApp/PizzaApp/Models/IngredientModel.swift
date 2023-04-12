@@ -9,7 +9,6 @@ struct IngredientModel: Decodable {
     var ingredientID: Int
     var ingredientName: String
     var ingredientPrice: Double
-    var isSelected: Bool
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -22,7 +21,6 @@ struct IngredientModel: Decodable {
         ingredientID = try values.decode(Int.self, forKey: .id)
         ingredientName = try values.decode(String.self, forKey: .name)
         ingredientPrice = try values.decode(Double.self, forKey: .price)
-        isSelected = false
     }
 }
 
