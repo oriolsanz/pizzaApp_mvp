@@ -21,7 +21,6 @@ class DetailViewController: UIViewController {
     
     var pizza: PizzaModel?
     var ingredientsList: [IngredientModel] = []
-    var pizzaIngredients: [IngredientModel] = []
     
     private let presenter = DetailPresenter()
     
@@ -35,6 +34,11 @@ class DetailViewController: UIViewController {
         if let price = pizza?.pizzaPrice {
             presenter.pizzaPrice = price
             updatePizzaPrice(newPrice: price)
+        }
+        
+        if let pizza = pizza {
+            ingredientsList = presenter.getPizzaIngredients(fromPizza: pizza, withIngredients: ingredientsList)
+            ingredientsTableView.reloadData()
         }
     }
     
@@ -65,25 +69,17 @@ class DetailViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    @IBAction func addButtonTapped(_ sender: UIButton) {
+    @IBAction func buyButtonTapped(_ sender: UIButton) {
         // TODO add view
         print(sender.currentTitle)
     }
     
     @objc func minusLabelTapped() {
-        if numberLabel.text != "1" {
-            if let price = pizza?.pizzaPrice {
-                presenter.substractPrice(value: "\(price)")
-                numberLabel.text = "\((Int(numberLabel.text ?? "1") ?? 1) - 1)"
-            }
-        }
+        presenter.substractPizza()
     }
     
     @objc func plusLabelTapped() {
-        if let price = pizza?.pizzaPrice {
-            presenter.addPrice(value: "\(price)")
-            numberLabel.text = "\((Int(numberLabel.text ?? "1") ?? 1) + 1)"
-        }
+        presenter.addPizza()
     }
     
 }
@@ -112,17 +108,15 @@ extension DetailViewController: IngredientCellDelegate {
     
     func addButtonTapped(_ cell: IngredientCell) {
         if let price = cell.ingredientPrice.text {
-            presenter.addPrice(value: price)
-            cell.ingredientQuantity.text = String((Int(cell.ingredientQuantity.text ?? "0") ?? 0) + 1)
+            ingredientsList = presenter.addPrice(value: price, toIngredient: cell.ingredientName.text ?? "", fromIngredientsList: ingredientsList)
+            ingredientsTableView.reloadData()
         }
     }
     
     func substractButtonTapped(_ cell: IngredientCell) {
-        if (!(cell.ingredientQuantity.text?.isEmpty ?? true) && cell.ingredientQuantity.text != "0") {
-            if let price = cell.ingredientPrice.text {
-                presenter.substractPrice(value: price)
-                cell.ingredientQuantity.text = String((Int(cell.ingredientQuantity.text ?? "0") ?? 0) - 1)
-            }
+        if let price = cell.ingredientPrice.text {
+            ingredientsList = presenter.substractPrice(value: price, toIngredient: cell.ingredientName.text ?? "", fromIngredientsList: ingredientsList)
+            ingredientsTableView.reloadData()
         }
     }
 }
@@ -130,6 +124,11 @@ extension DetailViewController: IngredientCellDelegate {
 extension DetailViewController: DetailViewDelegate {
     
     func updatePizzaPrice(newPrice: Double) {
+        ingredientsTableView.reloadData()
         addToCartButton.setTitle("Add \(String(format: "%.2f", newPrice))€", for: .normal)
+    }
+    
+    func updatePizzaNumber(newValue: Int) {
+        numberLabel.text = "\(newValue)"
     }
 }

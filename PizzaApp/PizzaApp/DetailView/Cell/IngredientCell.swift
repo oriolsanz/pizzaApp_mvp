@@ -50,6 +50,13 @@ class IngredientCellDrawer: DrawerProtocol {
         
         cell.ingredientName.text = item.ingredientName
         cell.ingredientPrice.text = "\(String(format: "%.2f", item.ingredientPrice))€"
+        cell.ingredientQuantity.text = "\(item.ingredientQuantity)"
+        
+        if item.ingredientQuantity > 0 {
+            cell.contentView.backgroundColor = UIColor(red: 114/255, green: 204/255, blue: 229/255, alpha: 0.2)
+        } else {
+            cell.contentView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0)
+        }
         
         cell.selectionStyle = .none
     }
