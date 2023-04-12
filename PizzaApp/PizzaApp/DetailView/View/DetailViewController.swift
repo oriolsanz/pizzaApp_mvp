@@ -44,6 +44,13 @@ class DetailViewController: UIViewController {
         pizzaNameLabel.text = pizza?.pizzaName
         pizzaImageView.image = UIImage(named: pizza?.pizzaImage ?? "")
         ingredients.text = "Ingredientes:"
+        numberLabel.text = "1"
+        
+        minusLabel.isUserInteractionEnabled = true
+        minusLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(minusLabelTapped)))
+        
+        plusLabel.isUserInteractionEnabled = true
+        plusLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(plusLabelTapped)))
     }
     
     func configTableView() {
@@ -61,6 +68,22 @@ class DetailViewController: UIViewController {
     @IBAction func addButtonTapped(_ sender: UIButton) {
         // TODO add view
         print(sender.currentTitle)
+    }
+    
+    @objc func minusLabelTapped() {
+        if numberLabel.text != "1" {
+            if let price = pizza?.pizzaPrice {
+                presenter.substractPrice(value: "\(price)")
+                numberLabel.text = "\((Int(numberLabel.text ?? "1") ?? 1) - 1)"
+            }
+        }
+    }
+    
+    @objc func plusLabelTapped() {
+        if let price = pizza?.pizzaPrice {
+            presenter.addPrice(value: "\(price)")
+            numberLabel.text = "\((Int(numberLabel.text ?? "1") ?? 1) + 1)"
+        }
     }
     
 }

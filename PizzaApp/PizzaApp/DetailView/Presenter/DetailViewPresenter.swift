@@ -24,13 +24,19 @@ class DetailPresenter {
     }
     
     func addPrice(value: String) {
-        let removedEuroSymbol = value.dropLast(1)
+        var removedEuroSymbol = value
+        if value.last == "€" {
+            removedEuroSymbol = String(value.dropLast(1))
+        }
         pizzaPrice += Double(removedEuroSymbol) ?? 0.0
         detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice)
     }
     
     func substractPrice(value: String) {
-        let removedEuroSymbol = value.dropLast(1)
+        var removedEuroSymbol = value
+        if value.last == "€" {
+            removedEuroSymbol = String(value.dropLast(1))
+        }
         pizzaPrice -= Double(removedEuroSymbol) ?? 0.0
         detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice)
     }
