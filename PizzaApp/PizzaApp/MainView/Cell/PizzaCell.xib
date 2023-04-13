@@ -36,12 +36,22 @@
                             <action selector="didTapButton:" destination="WEf-Lm-b3K" eventType="touchUpInside" id="Kzq-Qu-iyB"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwK-Jj-BLR">
+                        <rect key="frame" x="241.66666666666666" y="202" width="111.33333333333334" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="Add to Cart"/>
+                        <connections>
+                            <action selector="addToCartButtonTapped:" destination="WEf-Lm-b3K" eventType="touchUpInside" id="Fud-za-T8z"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="cwK-Jj-BLR" firstAttribute="top" secondItem="iZN-Ob-w42" secondAttribute="bottom" constant="15" id="BwC-gR-7DA"/>
                     <constraint firstItem="7xL-Pa-PRy" firstAttribute="leading" secondItem="QIN-Dg-icy" secondAttribute="leadingMargin" constant="20" id="HJM-Yt-KW7"/>
                     <constraint firstItem="7xL-Pa-PRy" firstAttribute="top" secondItem="iZN-Ob-w42" secondAttribute="bottom" constant="15" id="VZL-f3-9FC"/>
                     <constraint firstAttribute="trailingMargin" secondItem="iZN-Ob-w42" secondAttribute="trailing" constant="10" id="Vg6-Q8-uWg"/>
                     <constraint firstItem="iZN-Ob-w42" firstAttribute="top" secondItem="TBW-F3-MkN" secondAttribute="bottom" constant="10" id="YMN-Ki-qXk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="cwK-Jj-BLR" secondAttribute="trailing" constant="20" id="cWL-Ev-6ev"/>
                     <constraint firstItem="TBW-F3-MkN" firstAttribute="centerX" secondItem="QIN-Dg-icy" secondAttribute="centerX" id="eqf-g0-PlE"/>
                     <constraint firstItem="iZN-Ob-w42" firstAttribute="leading" secondItem="QIN-Dg-icy" secondAttribute="leadingMargin" constant="10" id="g0w-xt-ZjC"/>
                     <constraint firstItem="TBW-F3-MkN" firstAttribute="top" secondItem="QIN-Dg-icy" secondAttribute="topMargin" constant="5" id="wI6-AL-aBS"/>
@@ -49,6 +59,7 @@
                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
             </tableViewCellContentView>
             <connections>
+                <outlet property="addToCartButton" destination="cwK-Jj-BLR" id="Oul-7D-FMa"/>
                 <outlet property="customizeButton" destination="7xL-Pa-PRy" id="mQv-DT-fpH"/>
                 <outlet property="pizzaImage" destination="TBW-F3-MkN" id="Khh-NJ-A2b"/>
                 <outlet property="pizzaName" destination="iZN-Ob-w42" id="gJU-Pc-Lvi"/>

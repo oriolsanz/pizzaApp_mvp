@@ -11,6 +11,7 @@ class PizzaCell: UITableViewCell {
     @IBOutlet weak var pizzaImage: UIImageView!
     @IBOutlet weak var pizzaName: UILabel!
     @IBOutlet weak var customizeButton: UIButton!
+    @IBOutlet weak var addToCartButton: UIButton!
     
     weak var delegate: PizzaCellDelegate?
     
@@ -18,10 +19,15 @@ class PizzaCell: UITableViewCell {
         
         delegate?.didTapButton(self)
     }
+    
+    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
+        delegate?.addToCartButtonTapped(self)
+    }
 }
 
 protocol PizzaCellDelegate: AnyObject {
     func didTapButton(_ cell: PizzaCell)
+    func addToCartButtonTapped(_ cell: PizzaCell)
 }
 
 class PizzaCellDrawer: DrawerProtocol {

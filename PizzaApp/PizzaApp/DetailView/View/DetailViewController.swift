@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DetailViewControllerDelegate {
+    func buyPizza(pizzas: [PizzaModel?])
+}
+
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var pizzaNameLabel: UILabel!
@@ -21,6 +25,7 @@ class DetailViewController: UIViewController {
     
     var pizza: PizzaModel?
     var ingredientsList: [IngredientModel] = []
+    var detailViewControllerDelegate: DetailViewControllerDelegate?
     
     private let presenter = DetailPresenter()
     
@@ -31,9 +36,10 @@ class DetailViewController: UIViewController {
         configTableView()
         presenter.setViewDelegate(detailViewDelegate: self)
         
-        if let price = pizza?.pizzaPrice {
-            presenter.pizzaPrice = price
-            updatePizzaPrice(newPrice: price)
+        if let pizza = pizza {
+            presenter.setPizza(pizza)
+            presenter.pizzaPrice = pizza.pizzaPrice
+            updatePizzaPrice(newPrice: pizza.pizzaPrice)
         }
         
         if let pizza = pizza {
@@ -70,8 +76,8 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func buyButtonTapped(_ sender: UIButton) {
-        // TODO add view
-        print(sender.currentTitle)
+        detailViewControllerDelegate?.buyPizza(pizzas: presenter.getPizzas())
+        self.dismiss(animated: true)
     }
     
     @objc func minusLabelTapped() {
