@@ -33,7 +33,7 @@ class DetailPresenter {
             removedEuroSymbol = String(value.dropLast(1))
         }
         pizzaPrice += Double(removedEuroSymbol) ?? 0.0
-        detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice)
+        detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice*Double(pizzasNumber))
         for i in 0 ..< fromIngredientsList.count {
             if fromIngredientsList[i].ingredientName == toIngredient {
                 newList[i].ingredientQuantity += 1
@@ -53,7 +53,7 @@ class DetailPresenter {
             if fromIngredientsList[i].ingredientName == toIngredient {
                 if newList[i].ingredientQuantity != 0 && pizzaBaseIngredients["\(toIngredient)"] != fromIngredientsList[i].ingredientQuantity {
                     pizzaPrice -= Double(removedEuroSymbol) ?? 0.0
-                    detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice)
+                    detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice*Double(pizzasNumber))
                     newList[i].ingredientQuantity -= 1
                 }
                 return newList
@@ -64,16 +64,14 @@ class DetailPresenter {
     
     func addPizza() {
         pizzasNumber += 1
-        pizzaPrice += pizzaPrice
-        detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice)
+        detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice*Double(pizzasNumber))
         detailViewDelegate?.updatePizzaNumber(newValue: pizzasNumber)
     }
     
     func substractPizza() {
         if pizzasNumber != 1 {
             pizzasNumber -= 1
-            pizzaPrice -= pizzaPrice
-            detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice)
+            detailViewDelegate?.updatePizzaPrice(newPrice: pizzaPrice*Double(pizzasNumber))
             detailViewDelegate?.updatePizzaNumber(newValue: pizzasNumber)
         }
     }
