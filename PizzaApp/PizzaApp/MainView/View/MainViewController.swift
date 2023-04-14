@@ -18,6 +18,8 @@ class MainViewController: UIViewController {
     
     var pizzaArray: [PizzaModel] = []
     var pizzaCart: [PizzaModel] = []
+    var pizzaModel: PizzaModel?
+    var ingredientsData: [IngredientModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +45,18 @@ class MainViewController: UIViewController {
     }
     
     func getData() {
-        
-        pizzaArray = presenter.getData().pizzas
+        presenter.getData()
+    }
+    
+    func returnPizzaModel(pizza: PizzaModel?) -> PizzaModel? {
+        return pizzaModel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showConfirmSegue" {
             if let destinationVC = segue.destination as? ConfirmViewController {
                 destinationVC.pizzasInCart = pizzaCart
-                destinationVC.pizzaIngredients = presenter.getData().ingredients
+                destinationVC.pizzaIngredients = ingredientsData
             }
         }
     }
@@ -88,8 +93,9 @@ extension MainViewController: PizzaCellDelegate {
         guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
             return
         }
-        vc.pizza = presenter.getPizza(fromList: pizzaArray, withName: cell.pizzaName.text ?? "")
-        vc.ingredientsList = presenter.getData().ingredients
+        presenter.getPizza(fromList: pizzaArray, withName: cell.pizzaName.text ?? "")
+        vc.pizza = pizzaModel
+        vc.ingredientsList = ingredientsData
         
         vc.detailViewControllerDelegate = self
         
@@ -107,6 +113,15 @@ extension MainViewController: PizzaCellDelegate {
 }
 
 extension MainViewController: MainViewDelegate {
+    
+    func getData(pizzas: [PizzaModel], ingredients: [IngredientModel]) {
+        pizzaArray = pizzas
+        ingredientsData = ingredients
+    }
+    
+    func getPizza(pizza: PizzaModel?) {
+        pizzaModel = pizza
+    }
     
     func updateCart(with pizza: PizzaModel?) {
         if let pizza = pizza {

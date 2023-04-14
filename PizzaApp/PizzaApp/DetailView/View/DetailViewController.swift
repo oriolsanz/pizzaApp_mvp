@@ -43,8 +43,7 @@ class DetailViewController: UIViewController {
         }
         
         if let pizza = pizza {
-            ingredientsList = presenter.getPizzaIngredients(fromPizza: pizza, withIngredients: ingredientsList)
-            ingredientsTableView.reloadData()
+            presenter.getPizzaIngredients(fromPizza: pizza, withIngredients: ingredientsList)
         }
     }
     
@@ -76,8 +75,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func buyButtonTapped(_ sender: UIButton) {
-        detailViewControllerDelegate?.buyPizza(pizzas: presenter.getPizzas())
-        self.dismiss(animated: true)
+        presenter.getPizzas()
     }
     
     @objc func minusLabelTapped() {
@@ -114,15 +112,13 @@ extension DetailViewController: IngredientCellDelegate {
     
     func addButtonTapped(_ cell: IngredientCell) {
         if let price = cell.ingredientPrice.text {
-            ingredientsList = presenter.addPrice(value: price, toIngredient: cell.ingredientName.text ?? "", fromIngredientsList: ingredientsList)
-            ingredientsTableView.reloadData()
+            presenter.addPrice(value: price, toIngredient: cell.ingredientName.text ?? "", fromIngredientsList: ingredientsList)
         }
     }
     
     func substractButtonTapped(_ cell: IngredientCell) {
         if let price = cell.ingredientPrice.text {
-            ingredientsList = presenter.substractPrice(value: price, toIngredient: cell.ingredientName.text ?? "", fromIngredientsList: ingredientsList)
-            ingredientsTableView.reloadData()
+            presenter.substractPrice(value: price, toIngredient: cell.ingredientName.text ?? "", fromIngredientsList: ingredientsList)
         }
     }
 }
@@ -136,5 +132,15 @@ extension DetailViewController: DetailViewDelegate {
     
     func updatePizzaNumber(newValue: Int) {
         numberLabel.text = "\(newValue)"
+    }
+    
+    func getPizzaList(pizzaList: [PizzaModel?]) {
+        detailViewControllerDelegate?.buyPizza(pizzas: pizzaList)
+        self.dismiss(animated: true)
+    }
+    
+    func getIngredientList(ingredientList: [IngredientModel]) {
+        ingredientsList = ingredientList
+        ingredientsTableView.reloadData()
     }
 }

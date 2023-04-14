@@ -11,6 +11,8 @@ import Foundation
 protocol DetailViewDelegate: NSObjectProtocol {
     func updatePizzaPrice(newPrice: Double)
     func updatePizzaNumber(newValue: Int)
+    func getPizzaList(pizzaList: [PizzaModel?])
+    func getIngredientList(ingredientList: [IngredientModel])
 }
 
 // here we set the logic methods that the viewController needs
@@ -32,17 +34,17 @@ class DetailPresenter {
         finalPizza = pizza
     }
     
-    func getPizzas() -> [PizzaModel?] {
+    func getPizzas() {
         pizzasToBuy = []
         for _ in 0 ..< pizzasNumber {
             var pizzaToAppend = finalPizza
             pizzaToAppend?.pizzaPrice = Decimal(floatLiteral: pizzaPrice).doubleValue
             pizzasToBuy.append(pizzaToAppend)
         }
-        return (pizzasToBuy)
+        detailViewDelegate?.getPizzaList(pizzaList: pizzasToBuy)
     }
     
-    func addPrice(value: String, toIngredient: String, fromIngredientsList: [IngredientModel]) -> [IngredientModel] {
+    func addPrice(value: String, toIngredient: String, fromIngredientsList: [IngredientModel]) {
         var newList = fromIngredientsList
         var removedEuroSymbol = value
         if value.last == "€" {
@@ -54,13 +56,13 @@ class DetailPresenter {
             if fromIngredientsList[i].ingredientName == toIngredient {
                 finalPizza?.pizzaIngredients.append(fromIngredientsList[i].ingredientID)
                 newList[i].ingredientQuantity += 1
-                return newList
+                detailViewDelegate?.getIngredientList(ingredientList: newList)
             }
         }
-        return newList
+        detailViewDelegate?.getIngredientList(ingredientList: newList)
     }
     
-    func substractPrice(value: String, toIngredient: String, fromIngredientsList: [IngredientModel]) -> [IngredientModel] {
+    func substractPrice(value: String, toIngredient: String, fromIngredientsList: [IngredientModel]) {
         var newList = fromIngredientsList
         var removedEuroSymbol = value
         if value.last == "€" {
@@ -79,10 +81,10 @@ class DetailPresenter {
                     }
                     newList[i].ingredientQuantity -= 1
                 }
-                return newList
+                detailViewDelegate?.getIngredientList(ingredientList: newList)
             }
         }
-        return newList
+        detailViewDelegate?.getIngredientList(ingredientList: newList)
     }
     
     func addPizza() {
@@ -99,7 +101,7 @@ class DetailPresenter {
         }
     }
     
-    func getPizzaIngredients(fromPizza: PizzaModel, withIngredients: [IngredientModel]) -> [IngredientModel]{
+    func getPizzaIngredients(fromPizza: PizzaModel, withIngredients: [IngredientModel]) {
         var newList = withIngredients
         for ingredientID in fromPizza.pizzaIngredients {
             for i in 0 ..< newList.count {
@@ -109,7 +111,7 @@ class DetailPresenter {
                 }
             }
         }
-        return newList
+        detailViewDelegate?.getIngredientList(ingredientList: newList)
     }
 }
 
