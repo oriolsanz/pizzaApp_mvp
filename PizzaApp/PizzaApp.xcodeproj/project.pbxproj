@@ -29,6 +29,10 @@
 		F822EE3629E6B12400E21041 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE3529E6B12400E21041 /* DetailViewPresenter.swift */; };
 		F822EE3929E6B2A700E21041 /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F822EE3829E6B2A700E21041 /* IngredientCell.xib */; };
 		F822EE3B29E6B47000E21041 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE3A29E6B47000E21041 /* IngredientCell.swift */; };
+		F822EE3E29E89B5600E21041 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE3D29E89B5600E21041 /* ConfirmViewController.swift */; };
+		F822EE4229E89F9900E21041 /* ConfirmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE4129E89F9900E21041 /* ConfirmPresenter.swift */; };
+		F822EE4529E89FBE00E21041 /* ConfirmPizzaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822EE4429E89FBE00E21041 /* ConfirmPizzaCell.swift */; };
+		F822EE4729E89FC600E21041 /* ConfirmPizzaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F822EE4629E89FC600E21041 /* ConfirmPizzaCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		F822EE3529E6B12400E21041 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
 		F822EE3829E6B2A700E21041 /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		F822EE3A29E6B47000E21041 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		F822EE3D29E89B5600E21041 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		F822EE4129E89F9900E21041 /* ConfirmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPresenter.swift; sourceTree = "<group>"; };
+		F822EE4429E89FBE00E21041 /* ConfirmPizzaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPizzaCell.swift; sourceTree = "<group>"; };
+		F822EE4629E89FC600E21041 /* ConfirmPizzaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmPizzaCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,7 @@
 		F822EDE229E409E000E21041 /* PizzaApp */ = {
 			isa = PBXGroup;
 			children = (
+				F822EE3C29E89B3F00E21041 /* ConfirmView */,
 				F822EE2729E5E15A00E21041 /* Models */,
 				F822EE2129E48E6600E21041 /* DetailView */,
 				F822EE1B29E42A7800E21041 /* Utils */,
@@ -262,6 +271,41 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		F822EE3C29E89B3F00E21041 /* ConfirmView */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE4329E89FA000E21041 /* Cell */,
+				F822EE4029E89F8A00E21041 /* Presenter */,
+				F822EE3F29E89F8300E21041 /* View */,
+			);
+			path = ConfirmView;
+			sourceTree = "<group>";
+		};
+		F822EE3F29E89F8300E21041 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE3D29E89B5600E21041 /* ConfirmViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F822EE4029E89F8A00E21041 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE4129E89F9900E21041 /* ConfirmPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F822EE4329E89FA000E21041 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F822EE4429E89FBE00E21041 /* ConfirmPizzaCell.swift */,
+				F822EE4629E89FC600E21041 /* ConfirmPizzaCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,6 +414,7 @@
 				F822EE2629E4C5B500E21041 /* pizzas.json in Resources */,
 				F822EDF029E409E200E21041 /* LaunchScreen.storyboard in Resources */,
 				F822EDED29E409E200E21041 /* Assets.xcassets in Resources */,
+				F822EE4729E89FC600E21041 /* ConfirmPizzaCell.xib in Resources */,
 				F822EE3929E6B2A700E21041 /* IngredientCell.xib in Resources */,
 				F822EDEB29E409E000E21041 /* Main.storyboard in Resources */,
 			);
@@ -401,12 +446,15 @@
 				F822EE2929E5E19D00E21041 /* PizzaModel.swift in Sources */,
 				F822EE2029E4575500E21041 /* MainPresenter.swift in Sources */,
 				F822EDE429E409E000E21041 /* AppDelegate.swift in Sources */,
+				F822EE3E29E89B5600E21041 /* ConfirmViewController.swift in Sources */,
 				F822EE3B29E6B47000E21041 /* IngredientCell.swift in Sources */,
 				F822EE3029E60A7900E21041 /* RootModel.swift in Sources */,
+				F822EE4229E89F9900E21041 /* ConfirmPresenter.swift in Sources */,
 				F822EE2D29E5E75A00E21041 /* Utils.swift in Sources */,
 				F822EE2B29E5E1C200E21041 /* IngredientModel.swift in Sources */,
 				F822EDE629E409E000E21041 /* SceneDelegate.swift in Sources */,
 				F822EE1E29E42A8A00E21041 /* DrawerProtocol.swift in Sources */,
+				F822EE4529E89FBE00E21041 /* ConfirmPizzaCell.swift in Sources */,
 				F822EE3629E6B12400E21041 /* DetailViewPresenter.swift in Sources */,
 				F822EE2329E48E7900E21041 /* DetailViewController.swift in Sources */,
 			);

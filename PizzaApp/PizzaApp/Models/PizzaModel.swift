@@ -10,6 +10,7 @@ struct PizzaModel: Decodable {
     var pizzaImage: String
     var pizzaIngredients: [Int]
     var pizzaPrice: Double
+    var finalView: Bool = false
     
     private enum CodingKeys: String, CodingKey {
         case name
@@ -29,6 +30,9 @@ struct PizzaModel: Decodable {
 
 extension PizzaModel: DrawerItemProtocol {
     var cellDrawer: DrawerProtocol {
+        if finalView {
+            return ConfirmPizzaCellDrawer()
+        }
         return PizzaCellDrawer()
     }
 }

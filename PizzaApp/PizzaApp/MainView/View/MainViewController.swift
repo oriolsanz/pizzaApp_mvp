@@ -47,9 +47,17 @@ class MainViewController: UIViewController {
         pizzaArray = presenter.getData().pizzas
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showConfirmSegue" {
+            if let destinationVC = segue.destination as? ConfirmViewController {
+                destinationVC.pizzasInCart = pizzaCart
+                destinationVC.pizzaIngredients = presenter.getData().ingredients
+            }
+        }
+    }
+    
     @IBAction func cartButtonTapped(_ sender: UIButton) {
-        // TODO go to new view
-        print("pizzas: \(pizzaCart)")
+        performSegue(withIdentifier: "showConfirmSegue", sender: nil)
     }
 }
 
@@ -102,7 +110,9 @@ extension MainViewController: MainViewDelegate {
     
     func updateCart(with pizza: PizzaModel?) {
         if let pizza = pizza {
-            pizzaCart.append(pizza)
+            var p = pizza
+            p.finalView = true
+            pizzaCart.append(p)
         }
         cartCounterLabel.text = "\(pizzaCart.count)"
     }
@@ -112,7 +122,9 @@ extension MainViewController: DetailViewControllerDelegate {
     
     func buyPizza(pizzas: [PizzaModel?]) {
         for pizza in pizzas {
-            updateCart(with: pizza)
+            var p = pizza
+            p?.finalView = true
+            updateCart(with: p)
         }
     }
 }

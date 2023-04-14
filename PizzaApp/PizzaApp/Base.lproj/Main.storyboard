@@ -61,11 +61,75 @@
                         <outlet property="cartCounterLabel" destination="js0-nU-zaw" id="Wxx-YX-n08"/>
                         <outlet property="tableview" destination="i7J-bw-n6T" id="cwP-aK-lty"/>
                         <outlet property="titleLabel" destination="VOD-N5-MhI" id="cYl-cC-3ny"/>
+                        <segue destination="oCe-tR-JNn" kind="presentation" identifier="showConfirmSegue" modalPresentationStyle="fullScreen" id="EIU-ct-HMq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="4"/>
+        </scene>
+        <!--Confirm View Controller-->
+        <scene sceneID="DY7-AQ-QIe">
+            <objects>
+                <viewController id="oCe-tR-JNn" customClass="ConfirmViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HHd-Te-6ca">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ov0-Ez-Rc7">
+                                <rect key="frame" x="15" y="74" width="76.333333333333329" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="&lt; Back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="oCe-tR-JNn" eventType="touchUpInside" id="tfw-po-1ix"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizzas on Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN6-7U-0OG">
+                                <rect key="frame" x="141.66666666666666" y="74" width="109.66666666666666" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="fXb-2Z-wkW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wW2-O5-r63">
+                                <rect key="frame" x="10" y="124" width="373" height="634"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2w-J1-4Eh">
+                                <rect key="frame" x="0.0" y="768" width="393" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qkd-e3-YyE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="feI-tU-1XU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ov0-Ez-Rc7" firstAttribute="leading" secondItem="feI-tU-1XU" secondAttribute="leading" constant="15" id="1d1-to-4dp"/>
+                            <constraint firstItem="feI-tU-1XU" firstAttribute="trailing" secondItem="W2w-J1-4Eh" secondAttribute="trailing" id="357-ea-Qdz"/>
+                            <constraint firstItem="Ov0-Ez-Rc7" firstAttribute="top" secondItem="feI-tU-1XU" secondAttribute="top" constant="15" id="7QI-Wr-bpV"/>
+                            <constraint firstItem="W2w-J1-4Eh" firstAttribute="bottom" secondItem="feI-tU-1XU" secondAttribute="bottom" id="BRY-Zh-K4H"/>
+                            <constraint firstItem="DN6-7U-0OG" firstAttribute="top" secondItem="feI-tU-1XU" secondAttribute="top" constant="15" id="GJ2-lC-fTh"/>
+                            <constraint firstItem="W2w-J1-4Eh" firstAttribute="top" secondItem="wW2-O5-r63" secondAttribute="bottom" constant="10" id="KNf-CP-l0I"/>
+                            <constraint firstItem="DN6-7U-0OG" firstAttribute="centerX" secondItem="HHd-Te-6ca" secondAttribute="centerX" id="XsU-Ka-oUl"/>
+                            <constraint firstItem="wW2-O5-r63" firstAttribute="top" secondItem="Ov0-Ez-Rc7" secondAttribute="bottom" constant="15" id="f8i-xF-Yp6"/>
+                            <constraint firstItem="feI-tU-1XU" firstAttribute="trailing" secondItem="wW2-O5-r63" secondAttribute="trailing" constant="10" id="lgu-Yj-BoW"/>
+                            <constraint firstItem="wW2-O5-r63" firstAttribute="leading" secondItem="feI-tU-1XU" secondAttribute="leading" constant="10" id="uMH-vw-UXk"/>
+                            <constraint firstItem="W2w-J1-4Eh" firstAttribute="leading" secondItem="feI-tU-1XU" secondAttribute="leading" id="ypp-zI-h1k"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ad7-mh-uqq"/>
+                    <connections>
+                        <outlet property="confirmTableView" destination="wW2-O5-r63" id="xxW-QW-XDB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22k-Qd-YjF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="722"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="mu0-YX-d9P">
