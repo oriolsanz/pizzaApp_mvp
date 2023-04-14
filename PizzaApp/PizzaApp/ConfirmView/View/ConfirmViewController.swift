@@ -11,11 +11,14 @@ class ConfirmViewController: UIViewController {
     
     @IBOutlet weak var confirmTableView: UITableView!
     @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var confirmView: UIView!
     
     private let presenter = ConfirmPresenter()
     
     var pizzasInCart: [PizzaModel?] = []
     var pizzaIngredients: [IngredientModel] = []
+    
+    weak var cartProvider: CartProvider?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,11 @@ class ConfirmViewController: UIViewController {
         presenter.setViewDelegate(confirmViewDelegate: self)
         presenter.calculateCartAmount(pizzaArray: pizzasInCart)
         configTableView()
+        configView()
+    }
+    
+    func configView() {
+        confirmView.isHidden = true
     }
     
     func configTableView() {
@@ -33,8 +41,17 @@ class ConfirmViewController: UIViewController {
         confirmTableView.register(UINib(nibName: "ConfirmPizzaCell", bundle: nil), forCellReuseIdentifier: "ConfirmPizzaCell")
     }
     
+    @IBAction func buyButtonTapped(_ sender: UIButton) {
+        confirmView.isHidden = false
+    }
+    
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
+    }
+    
+    @IBAction func homepageButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true)
+        cartProvider?.resetCart()
     }
 }
 

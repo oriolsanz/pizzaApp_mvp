@@ -7,8 +7,11 @@
 
 import UIKit
 
+protocol CartProvider: AnyObject {
+    func resetCart()
+}
+
 class MainViewController: UIViewController {
-    
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableview: UITableView!
@@ -57,6 +60,7 @@ class MainViewController: UIViewController {
             if let destinationVC = segue.destination as? ConfirmViewController {
                 destinationVC.pizzasInCart = pizzaCart
                 destinationVC.pizzaIngredients = ingredientsData
+                destinationVC.cartProvider = self
             }
         }
     }
@@ -141,5 +145,12 @@ extension MainViewController: DetailViewControllerDelegate {
             p?.finalView = true
             updateCart(with: p)
         }
+    }
+}
+
+extension MainViewController: CartProvider {
+    func resetCart() {
+        pizzaCart = []
+        cartCounterLabel.text = "\(pizzaCart.count)"
     }
 }

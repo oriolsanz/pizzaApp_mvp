@@ -104,7 +104,37 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="buyButtonTapped:" destination="oCe-tR-JNn" eventType="touchUpInside" id="LeO-4A-Wh3"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xus-ac-Wqo">
+                                <rect key="frame" x="0.0" y="74" width="393" height="744"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase made correctly. Thanks for trusting us." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGB-6J-qpH">
+                                        <rect key="frame" x="50" y="150" width="293" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3S1-ri-6B1">
+                                        <rect key="frame" x="139" y="230.66666666666669" width="115.33333333333331" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="HOMEPAGE"/>
+                                        <connections>
+                                            <action selector="homepageButtonTapped:" destination="oCe-tR-JNn" eventType="touchUpInside" id="6YM-HI-Vrz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="LGB-6J-qpH" firstAttribute="top" secondItem="Xus-ac-Wqo" secondAttribute="top" constant="150" id="8N0-XY-bBI"/>
+                                    <constraint firstItem="3S1-ri-6B1" firstAttribute="top" secondItem="LGB-6J-qpH" secondAttribute="bottom" constant="40" id="9Ny-ll-eAK"/>
+                                    <constraint firstItem="3S1-ri-6B1" firstAttribute="centerX" secondItem="Xus-ac-Wqo" secondAttribute="centerX" id="NWW-Jn-zB8"/>
+                                    <constraint firstItem="LGB-6J-qpH" firstAttribute="leading" secondItem="Xus-ac-Wqo" secondAttribute="leading" constant="50" id="a9k-rn-Tfx"/>
+                                    <constraint firstAttribute="trailing" secondItem="LGB-6J-qpH" secondAttribute="trailing" constant="50" id="co0-wR-aXc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="feI-tU-1XU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -117,8 +147,12 @@
                             <constraint firstItem="W2w-J1-4Eh" firstAttribute="top" secondItem="wW2-O5-r63" secondAttribute="bottom" constant="10" id="KNf-CP-l0I"/>
                             <constraint firstItem="DN6-7U-0OG" firstAttribute="centerX" secondItem="HHd-Te-6ca" secondAttribute="centerX" id="XsU-Ka-oUl"/>
                             <constraint firstItem="wW2-O5-r63" firstAttribute="top" secondItem="Ov0-Ez-Rc7" secondAttribute="bottom" constant="15" id="f8i-xF-Yp6"/>
+                            <constraint firstItem="Xus-ac-Wqo" firstAttribute="leading" secondItem="feI-tU-1XU" secondAttribute="leading" id="kgt-Tz-87b"/>
                             <constraint firstItem="feI-tU-1XU" firstAttribute="trailing" secondItem="wW2-O5-r63" secondAttribute="trailing" constant="10" id="lgu-Yj-BoW"/>
+                            <constraint firstItem="feI-tU-1XU" firstAttribute="bottom" secondItem="Xus-ac-Wqo" secondAttribute="bottom" id="q1S-oN-ov4"/>
                             <constraint firstItem="wW2-O5-r63" firstAttribute="leading" secondItem="feI-tU-1XU" secondAttribute="leading" constant="10" id="uMH-vw-UXk"/>
+                            <constraint firstItem="feI-tU-1XU" firstAttribute="trailing" secondItem="Xus-ac-Wqo" secondAttribute="trailing" id="xFt-Dc-y6x"/>
+                            <constraint firstItem="Xus-ac-Wqo" firstAttribute="top" secondItem="feI-tU-1XU" secondAttribute="top" constant="15" id="y2A-Pr-qHb"/>
                             <constraint firstItem="W2w-J1-4Eh" firstAttribute="leading" secondItem="feI-tU-1XU" secondAttribute="leading" id="ypp-zI-h1k"/>
                         </constraints>
                     </view>
@@ -126,6 +160,7 @@
                     <connections>
                         <outlet property="buyButton" destination="W2w-J1-4Eh" id="8YW-bQ-5Ms"/>
                         <outlet property="confirmTableView" destination="wW2-O5-r63" id="xxW-QW-XDB"/>
+                        <outlet property="confirmView" destination="Xus-ac-Wqo" id="8EC-ne-rx4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22k-Qd-YjF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
