@@ -12,6 +12,7 @@ class ConfirmViewController: UIViewController {
     @IBOutlet weak var confirmTableView: UITableView!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var confirmView: UIView!
+    @IBOutlet weak var noItemsLabel: UILabel!
     
     private let presenter = ConfirmPresenter()
     
@@ -31,6 +32,11 @@ class ConfirmViewController: UIViewController {
     
     func configView() {
         confirmView.isHidden = true
+        
+        if pizzasInCart.isEmpty {
+            buyButton.isEnabled = false
+            noItemsLabel.isHidden = false
+        }
     }
     
     func configTableView() {

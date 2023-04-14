@@ -97,6 +97,12 @@
                                 <rect key="frame" x="10" y="124" width="373" height="634"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no pizzas in the shopping cart" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeb-49-f4m">
+                                <rect key="frame" x="50" y="405.66666666666669" width="293" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2w-J1-4Eh">
                                 <rect key="frame" x="0.0" y="768" width="393" height="50"/>
                                 <constraints>
@@ -108,7 +114,7 @@
                                     <action selector="buyButtonTapped:" destination="oCe-tR-JNn" eventType="touchUpInside" id="LeO-4A-Wh3"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xus-ac-Wqo">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xus-ac-Wqo">
                                 <rect key="frame" x="0.0" y="74" width="393" height="744"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase made correctly. Thanks for trusting us." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGB-6J-qpH">
@@ -145,11 +151,15 @@
                             <constraint firstItem="W2w-J1-4Eh" firstAttribute="bottom" secondItem="feI-tU-1XU" secondAttribute="bottom" id="BRY-Zh-K4H"/>
                             <constraint firstItem="DN6-7U-0OG" firstAttribute="top" secondItem="feI-tU-1XU" secondAttribute="top" constant="15" id="GJ2-lC-fTh"/>
                             <constraint firstItem="W2w-J1-4Eh" firstAttribute="top" secondItem="wW2-O5-r63" secondAttribute="bottom" constant="10" id="KNf-CP-l0I"/>
+                            <constraint firstItem="jeb-49-f4m" firstAttribute="leading" secondItem="feI-tU-1XU" secondAttribute="leading" constant="50" id="Oaa-Zw-ZOY"/>
+                            <constraint firstItem="jeb-49-f4m" firstAttribute="centerX" secondItem="HHd-Te-6ca" secondAttribute="centerX" id="Ph5-tf-2kL"/>
                             <constraint firstItem="DN6-7U-0OG" firstAttribute="centerX" secondItem="HHd-Te-6ca" secondAttribute="centerX" id="XsU-Ka-oUl"/>
                             <constraint firstItem="wW2-O5-r63" firstAttribute="top" secondItem="Ov0-Ez-Rc7" secondAttribute="bottom" constant="15" id="f8i-xF-Yp6"/>
                             <constraint firstItem="Xus-ac-Wqo" firstAttribute="leading" secondItem="feI-tU-1XU" secondAttribute="leading" id="kgt-Tz-87b"/>
                             <constraint firstItem="feI-tU-1XU" firstAttribute="trailing" secondItem="wW2-O5-r63" secondAttribute="trailing" constant="10" id="lgu-Yj-BoW"/>
+                            <constraint firstItem="feI-tU-1XU" firstAttribute="trailing" secondItem="jeb-49-f4m" secondAttribute="trailing" constant="50" id="n3R-ac-QJZ"/>
                             <constraint firstItem="feI-tU-1XU" firstAttribute="bottom" secondItem="Xus-ac-Wqo" secondAttribute="bottom" id="q1S-oN-ov4"/>
+                            <constraint firstItem="jeb-49-f4m" firstAttribute="centerY" secondItem="HHd-Te-6ca" secondAttribute="centerY" id="qXS-FX-9gh"/>
                             <constraint firstItem="wW2-O5-r63" firstAttribute="leading" secondItem="feI-tU-1XU" secondAttribute="leading" constant="10" id="uMH-vw-UXk"/>
                             <constraint firstItem="feI-tU-1XU" firstAttribute="trailing" secondItem="Xus-ac-Wqo" secondAttribute="trailing" id="xFt-Dc-y6x"/>
                             <constraint firstItem="Xus-ac-Wqo" firstAttribute="top" secondItem="feI-tU-1XU" secondAttribute="top" constant="15" id="y2A-Pr-qHb"/>
@@ -161,6 +171,7 @@
                         <outlet property="buyButton" destination="W2w-J1-4Eh" id="8YW-bQ-5Ms"/>
                         <outlet property="confirmTableView" destination="wW2-O5-r63" id="xxW-QW-XDB"/>
                         <outlet property="confirmView" destination="Xus-ac-Wqo" id="8EC-ne-rx4"/>
+                        <outlet property="noItemsLabel" destination="jeb-49-f4m" id="fXN-94-eks"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22k-Qd-YjF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
