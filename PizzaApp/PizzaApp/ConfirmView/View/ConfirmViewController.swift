@@ -15,7 +15,7 @@ class ConfirmViewController: UIViewController {
     
     private let presenter = ConfirmPresenter()
     
-    var pizzasInCart: [PizzaModel?] = []
+    var pizzasInCart: [PizzaModel] = []
     var pizzaIngredients: [IngredientModel] = []
     
     weak var cartProvider: CartProvider?
@@ -62,12 +62,12 @@ extension ConfirmViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = pizzasInCart[indexPath.row]
-        let drawer = item?.cellDrawer
-        let cell = drawer?.tableView(tableView, cellForRowAt: indexPath)
-        if let cell = cell as? ConfirmPizzaCell, let item = item {
+        let drawer = item.cellDrawer
+        let cell = drawer.tableView(tableView, cellForRowAt: indexPath)
+        if let cell = cell as? ConfirmPizzaCell {
             cell.ingredientsList = pizzaIngredients
             cell.indexPath = indexPath.row
-            drawer?.drawCell(cell, withItem: item)
+            drawer.drawCell(cell, withItem: item)
             cell.delegate = self
             return cell
         }
@@ -81,6 +81,7 @@ extension ConfirmViewController: ConfirmPizzaCellDelegate {
         pizzasInCart.remove(at: cell.indexPath)
         confirmTableView.reloadData()
         presenter.calculateCartAmount(pizzaArray: pizzasInCart)
+        cartProvider?.updatePizzaCart(pizzaList: pizzasInCart)
     }
 }
 

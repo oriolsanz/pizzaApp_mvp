@@ -9,6 +9,7 @@ import UIKit
 
 protocol CartProvider: AnyObject {
     func resetCart()
+    func updatePizzaCart(pizzaList: [PizzaModel])
 }
 
 class MainViewController: UIViewController {
@@ -149,8 +150,14 @@ extension MainViewController: DetailViewControllerDelegate {
 }
 
 extension MainViewController: CartProvider {
+    
     func resetCart() {
         pizzaCart = []
+        cartCounterLabel.text = "\(pizzaCart.count)"
+    }
+    
+    func updatePizzaCart(pizzaList: [PizzaModel]) {
+        pizzaCart = pizzaList
         cartCounterLabel.text = "\(pizzaCart.count)"
     }
 }
