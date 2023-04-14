@@ -124,6 +124,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ad7-mh-uqq"/>
                     <connections>
+                        <outlet property="buyButton" destination="W2w-J1-4Eh" id="8YW-bQ-5Ms"/>
                         <outlet property="confirmTableView" destination="wW2-O5-r63" id="xxW-QW-XDB"/>
                     </connections>
                 </viewController>

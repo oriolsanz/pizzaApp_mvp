@@ -114,10 +114,3 @@ class DetailPresenter {
         detailViewDelegate?.getIngredientList(ingredientList: newList)
     }
 }
-
-// This is needed to avoid the Floating Point on pizza prices
-extension Decimal {
-    var doubleValue:Double {
-        return NSDecimalNumber(decimal:self).doubleValue
-    }
-}

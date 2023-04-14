@@ -10,6 +10,7 @@ import UIKit
 class ConfirmViewController: UIViewController {
     
     @IBOutlet weak var confirmTableView: UITableView!
+    @IBOutlet weak var buyButton: UIButton!
     
     private let presenter = ConfirmPresenter()
     
@@ -69,7 +70,6 @@ extension ConfirmViewController: ConfirmPizzaCellDelegate {
 extension ConfirmViewController: ConfirmViewDelegate {
     
     func getCartAmount(_ amount: Double) {
-        // TODO set text to button
-        print("TOTAL AMOUNT = \(amount)")
+        buyButton.setTitle("Pay \(String(format: "%.2f", Decimal(floatLiteral: amount).doubleValue))€", for: .normal)
     }
 }
